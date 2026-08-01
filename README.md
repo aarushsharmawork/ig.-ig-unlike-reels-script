@@ -12,8 +12,22 @@ step-5 type allow pasting in console
 step-6 paste the script and press enter
 step-7 let the tab be open until the action is done
 
-Hello Users
-I have always wondered about users privacy there are some awkward moments where we like to keep some like posts and videos to themself but than there are some updated terms and condition of some apps for improving user experiences which might not align with some users this happens with me too so instagram launched a new feature in a recent year where the people who follows me are able to see my liked reels and post which I was not happy about and there was no such features such as remove all liked reels at once and i had over 3000+ liked reels so i wanted to start fresh  
+## About This Project
+
+I've always cared about user privacy, and there are certain things — like the posts and reels we like — that feel like they should stay personal. Instagram's terms and features change over time to "improve user experience," but those changes don't always align with what users actually want.
+
+A while back, Instagram rolled out a feature that lets your followers see what reels and posts you've liked. I wasn't happy about that. To make things worse, there was no built-in way to remove all your liked content at once — and I had over 3,000 liked reels I wanted to clear out.
+
+After digging around, I found I wasn't alone — a lot of people online felt the same way. I also came across paid tools like [unlikeall.com](https://www.unlikeall.com/) that charge a fee to do exactly this. So I built my own version instead, and decided to make it free, open-source, and transparent about how it works — no hidden fees, no account credentials sent to a third-party server, and no black-box logic.
+
+Compared to paid alternatives, this project is:
+
+- **Free** — no subscription or one-time fee
+- **Open-source** — you can read exactly what the code does before running it
+- **Self-hosted** — runs locally, so your login credentials never leave your machine
+- **Customizable** — modify the unlike speed, limits, or targeting logic to fit your needs
+
+
 #USE RESPONSIBLY — AUTOMATION SAFETY BANNER                                              
   │                                                                                                
   │ This script automates browser interactions on Instagram Web. Use this script responsibly and in
@@ -42,6 +56,63 @@ I have always wondered about users privacy there are some awkward moments where 
                           │         │ execution. Unliked posts up  │
                           │         │ to that point remain         │
                           │         │ unliked.                     │
+
+
+
+  🛡️ 1. Anti-Detection & Account Protection Engine                                             
+                                                                                                   
+  • Human-like Variable Delays (Jitter): Unlike basic scripts that click at exact robotic intervals
+  (e.g. every 500ms), this script introduces randomized micro-variations (1.8s–2.8s per click) to  
+  mirror genuine human pacing.                                                                     
+  • Automated "Coffee Breaks": Takes periodic extended rests (35–50 seconds) every 4 batches,      
+  preventing your account from triggering Instagram's automated velocity flags.                    
+  • Controlled Batch Architecture: Processes items in small 12-item batches rather than attempting 
+  thousands at once, staying well within safe API thresholds.                                      
+  ──────                                                                                           
+  ### 🎯 2. Spatial & Exact-Match Element Targeting                                                
+                                                                                                   
+  • Exact String Filter (text === 'unlike'): Strictly targets the red confirmation button while    
+  completely ignoring static header titles ("Unlike posts?") and bottom bar counters ("Unlike      
+  (12)").                                                                                          
+  • Viewport Geometry Filtering: Uses screen coordinates (rect.top > 50%) to distinguish the bottom
+  floating action bar from center pop-up modals.                                                   
+  • Image Dimension Thresholding: Automatically filters out profile avatars, stories, and          
+  navigation icons by detecting only actual post/reel thumbnails (width > 80px && height > 80px).  
+  ──────                                                                                           
+  ### 🔄 3. State Resiliency & DOM Auto-Recovery                                                   
+                                                                                                   
+  • Dynamic Re-Querying (Zero Stale Elements): Re-evaluates elements before every single click     
+  rather than storing fixed arrays. This prevents crashes caused by Instagram's React UI re-       
+  rendering blue checkmark overlays.                                                               
+  • Mid-Batch Viewport Auto-Scrolling: If fewer than 12 reels are currently visible on screen, the 
+  script automatically scrolls down 300px mid-batch to locate and process the remaining items.     
+  • Pre-Batch Modal Reset: Automatically detects and resolves lingering pop-ups from previous runs 
+  before starting a new cycle.                                                                     
+  ──────                                                                                           
+  ### 🖥️ 4. Cross-Platform & Zero-Install Simplicity                                               
+                                                                                                   
+  • Native Browser Execution: Runs directly inside Chrome Developer Console on macOS, Windows,     
+  Linux, and ChromeOS—no Python, node modules, or third-party extensions required.                 
+  • Pure ASCII Packaging: Formatted as a single-line pure ASCII block to eliminate invisible non-  
+  breaking space errors (SyntaxError) during copy-pasting.                                         
+  ──────                                                                                           
+  ### 📊 Feature Comparison Matrix                                                                 
+                                                                                                   
+   Feature                      │     Standard Basic Scripts     │      This Optimized Script
+  ──────────────────────────────┼────────────────────────────────┼─────────────────────────────────
+   Execution Delay              │ Fixed / Instant (Triggers Bot  │      🎲 Randomized Jitter
+                                │             Flag)              │           (1.8s–2.8s)
+   Safety Rest Breaks           │              None              │    ☕ Automated 35s–50s Rest
+                                │                                │            Intervals
+   React Re-render Support      │   Fails (Stale DOM Elements)   │   🔄 Dynamic Re-Querying Per
+                                │                                │              Click
+   Pop-up Confirmation Handling │   Gets Stuck / Misses Popup    │   🎯 Strict text === 'unlike'
+                                │                                │            Targeting
+   Grid Detection               │    Unreliable URL Matching     │  📐 Image Dimension Filtering
+                                │                                │             (>80px)
+   Cross-Platform Compatibility │             Varies             │ 💻 100% Chrome (Mac & Windows)
+
+
   ──────                                                                                           
   ### 💡 Best Practices for Safe Account Operation                                                 
                                                                                                    
