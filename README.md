@@ -1,6 +1,6 @@
 # ig.-ig-unlike-reels-script
-# this script unlikes the reels from instagram (made for chrome and for all mac,windows & linux)
-#this script is made by aarush and backedup by google antigravity AI.
+# this Javascript unlikes the reels from instagram (made for chrome and for all mac,windows & linux)
+#this Javascript is made by aarush and backedup by google antigravity AI.
 # This script has been tested and worked on MACos 26 tahore
 
 # How to run this script
