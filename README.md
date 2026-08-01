@@ -10,7 +10,7 @@ step-3 open console on chrome (using ctrl-shift-j for windows and cmd-option-j f
 step-4 write allow pasting in console and press enter
 step-5 type allow pasting in console
 step-6 paste the script and press enter
-step-7 let the tab be open until the action is done
+step-7 let the tab be open until the action is done 
 
 ## About This Project
 
@@ -26,6 +26,63 @@ Compared to paid alternatives, this project is:
 - **Open-source** — you can read exactly what the code does before running it
 - **Self-hosted** — runs locally, so your login credentials never leave your machine
 - **Customizable** — modify the unlike speed, limits, or targeting logic to fit your needs
+
+
+# Safety Features
+   1. Anti-Detection & Account Protection Engine                                             
+                                                                                                   
+  • Human-like Variable Delays (Jitter): Unlike basic scripts that click at exact robotic intervals
+  (e.g. every 500ms), this script introduces randomized micro-variations (1.8s–2.8s per click) to  
+  mirror genuine human pacing.                                                                     
+  • Automated "Coffee Breaks": Takes periodic extended rests (35–50 seconds) every 4 batches,      
+  preventing your account from triggering Instagram's automated velocity flags.                    
+  • Controlled Batch Architecture: Processes items in small 12-item batches rather than attempting 
+  thousands at once, staying well within safe API thresholds.                                      
+  ──────                                                                                           
+  ### 2. Spatial & Exact-Match Element Targeting                                                
+                                                                                                   
+  • Exact String Filter (text === 'unlike'): Strictly targets the red confirmation button while    
+  completely ignoring static header titles ("Unlike posts?") and bottom bar counters ("Unlike      
+  (12)").                                                                                          
+  • Viewport Geometry Filtering: Uses screen coordinates (rect.top > 50%) to distinguish the bottom
+  floating action bar from center pop-up modals.                                                   
+  • Image Dimension Thresholding: Automatically filters out profile avatars, stories, and          
+  navigation icons by detecting only actual post/reel thumbnails (width > 80px && height > 80px).  
+  ──────                                                                                           
+  ### 3. State Resiliency & DOM Auto-Recovery                                                   
+                                                                                                   
+  • Dynamic Re-Querying (Zero Stale Elements): Re-evaluates elements before every single click     
+  rather than storing fixed arrays. This prevents crashes caused by Instagram's React UI re-       
+  rendering blue checkmark overlays.                                                               
+  • Mid-Batch Viewport Auto-Scrolling: If fewer than 12 reels are currently visible on screen, the 
+  script automatically scrolls down 300px mid-batch to locate and process the remaining items.     
+  • Pre-Batch Modal Reset: Automatically detects and resolves lingering pop-ups from previous runs 
+  before starting a new cycle.                                                                     
+  ──────                                                                                           
+  ### 4. Cross-Platform & Zero-Install Simplicity                                               
+                                                                                                   
+  • Native Browser Execution: Runs directly inside Chrome Developer Console on macOS, Windows,     
+  Linux, and ChromeOS—no Python, node modules, or third-party extensions required.                 
+  • Pure ASCII Packaging: Formatted as a single-line pure ASCII block to eliminate invisible non-  
+  breaking space errors (SyntaxError) during copy-pasting.                                         
+  ──────                                                                                           
+  ### 📊 Feature Comparison Matrix                                                                 
+                                                                                                   
+   Feature                      │     Standard Basic Scripts     │      This Optimized Script
+  ──────────────────────────────┼────────────────────────────────┼─────────────────────────────────
+   Execution Delay              │ Fixed / Instant (Triggers Bot  │      🎲 Randomized Jitter
+                                │             Flag)              │           (1.8s–2.8s)
+   Safety Rest Breaks           │              None              │    ☕ Automated 35s–50s Rest
+                                │                                │            Intervals
+   React Re-render Support      │   Fails (Stale DOM Elements)   │   🔄 Dynamic Re-Querying Per
+                                │                                │              Click
+   Pop-up Confirmation Handling │   Gets Stuck / Misses Popup    │   🎯 Strict text === 'unlike'
+                                │                                │            Targeting
+   Grid Detection               │    Unreliable URL Matching     │  📐 Image Dimension Filtering
+                                │                                │             (>80px)
+   Cross-Platform Compatibility │             Varies             │ 💻 100% Chrome (Mac & Windows)
+
+
 
 
 #USE RESPONSIBLY — AUTOMATION SAFETY BANNER                                              
@@ -58,63 +115,8 @@ Compared to paid alternatives, this project is:
                           │         │ unliked.                     │
 
 
-
-  🛡️ 1. Anti-Detection & Account Protection Engine                                             
-                                                                                                   
-  • Human-like Variable Delays (Jitter): Unlike basic scripts that click at exact robotic intervals
-  (e.g. every 500ms), this script introduces randomized micro-variations (1.8s–2.8s per click) to  
-  mirror genuine human pacing.                                                                     
-  • Automated "Coffee Breaks": Takes periodic extended rests (35–50 seconds) every 4 batches,      
-  preventing your account from triggering Instagram's automated velocity flags.                    
-  • Controlled Batch Architecture: Processes items in small 12-item batches rather than attempting 
-  thousands at once, staying well within safe API thresholds.                                      
   ──────                                                                                           
-  ### 🎯 2. Spatial & Exact-Match Element Targeting                                                
-                                                                                                   
-  • Exact String Filter (text === 'unlike'): Strictly targets the red confirmation button while    
-  completely ignoring static header titles ("Unlike posts?") and bottom bar counters ("Unlike      
-  (12)").                                                                                          
-  • Viewport Geometry Filtering: Uses screen coordinates (rect.top > 50%) to distinguish the bottom
-  floating action bar from center pop-up modals.                                                   
-  • Image Dimension Thresholding: Automatically filters out profile avatars, stories, and          
-  navigation icons by detecting only actual post/reel thumbnails (width > 80px && height > 80px).  
-  ──────                                                                                           
-  ### 🔄 3. State Resiliency & DOM Auto-Recovery                                                   
-                                                                                                   
-  • Dynamic Re-Querying (Zero Stale Elements): Re-evaluates elements before every single click     
-  rather than storing fixed arrays. This prevents crashes caused by Instagram's React UI re-       
-  rendering blue checkmark overlays.                                                               
-  • Mid-Batch Viewport Auto-Scrolling: If fewer than 12 reels are currently visible on screen, the 
-  script automatically scrolls down 300px mid-batch to locate and process the remaining items.     
-  • Pre-Batch Modal Reset: Automatically detects and resolves lingering pop-ups from previous runs 
-  before starting a new cycle.                                                                     
-  ──────                                                                                           
-  ### 🖥️ 4. Cross-Platform & Zero-Install Simplicity                                               
-                                                                                                   
-  • Native Browser Execution: Runs directly inside Chrome Developer Console on macOS, Windows,     
-  Linux, and ChromeOS—no Python, node modules, or third-party extensions required.                 
-  • Pure ASCII Packaging: Formatted as a single-line pure ASCII block to eliminate invisible non-  
-  breaking space errors (SyntaxError) during copy-pasting.                                         
-  ──────                                                                                           
-  ### 📊 Feature Comparison Matrix                                                                 
-                                                                                                   
-   Feature                      │     Standard Basic Scripts     │      This Optimized Script
-  ──────────────────────────────┼────────────────────────────────┼─────────────────────────────────
-   Execution Delay              │ Fixed / Instant (Triggers Bot  │      🎲 Randomized Jitter
-                                │             Flag)              │           (1.8s–2.8s)
-   Safety Rest Breaks           │              None              │    ☕ Automated 35s–50s Rest
-                                │                                │            Intervals
-   React Re-render Support      │   Fails (Stale DOM Elements)   │   🔄 Dynamic Re-Querying Per
-                                │                                │              Click
-   Pop-up Confirmation Handling │   Gets Stuck / Misses Popup    │   🎯 Strict text === 'unlike'
-                                │                                │            Targeting
-   Grid Detection               │    Unreliable URL Matching     │  📐 Image Dimension Filtering
-                                │                                │             (>80px)
-   Cross-Platform Compatibility │             Varies             │ 💻 100% Chrome (Mac & Windows)
-
-
-  ──────                                                                                           
-  ### 💡 Best Practices for Safe Account Operation                                                 
+  ### Best Practices for Safe Account Operation                                                 
                                                                                                    
   1. Recommended Daily Limits:                                                                     
       • Do not exceed 300–1000 unlikes per day.                                                     
@@ -127,8 +129,10 @@ Compared to paid alternatives, this project is:
       • If Instagram displays a pop-up saying "Try again later" or "Action Blocked":               
           1. Immediately refresh the Chrome page (Ctrl + R / F5) to stop the script.                
           2. Wait 24 hours before running the script again.
-      2. AS-IS SOFTWARE: Provided without warranties of any kind.                                  
+## Disclaimer and user responsiblity
+  1. AS-IS SOFTWARE: Provided without warranties of any kind.                                  
 
-     4. NO LIABILITY: The author/owner is NOT liable for any account blocks,                        
+     2. NO LIABILITY: The author/owner is NOT liable for any account blocks,                        
        restrictions, or damages resulting from the use of this script.                             
-    5. AT YOUR OWN RISK: Execution and account management remain the user's responsibility.
+    3. AT YOUR OWN RISK: Execution and account management remain the user's responsibility.
+    4. Any unlawful activity or privacy harming shall not be tolerateds
