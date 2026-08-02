@@ -2,6 +2,7 @@
 # this Javascript unlikes the reels from instagram (made for chrome and for all mac,windows & linux)
 #this Javascript is made by aarush and backedup by google antigravity AI.
 # This script has been tested and worked on MACos 26 tahore
+# The in_unlike is the safest script while ig_unlike_unsafe is not the safest one and also makes websites buggy for certain OS
 
 # How to run this script
 step-1 open chrome://extensions/ and enable developer option in top right corner.
@@ -14,9 +15,7 @@ step-7 let the tab be open until the action is done
 
 ## About This Project
 
-I've always cared about user privacy, and there are certain things — like the posts and reels we like — that feel like they should stay personal. Instagram's terms and features change over time to "improve user experience," but those changes don't always align with what users actually want.
-
-A while back, Instagram rolled out a feature that lets your followers see what reels and posts you've liked. I wasn't happy about that. To make things worse, there was no built-in way to remove all your liked content at once — and I had over 3,000 liked reels I wanted to clear out.
+The idea for this project came from a friend who is a digital creator with a public Instagram profile. He wanted to remove previously liked Reels and posts that reflected personal interests so that his public activity better aligned with the content he wanted to share professionally. While helping him, I realized that Instagram doesn't provide a built-in way to bulk unlike liked content, making the process unnecessarily repetitive and time-consuming. I also wanted the same functionality for my own account, where I had accumulated thousands of liked Reels over time and I also wanted to switch my Instagram ID to professional ID for my further goals  . This project was built to address that gap by automating a task that would otherwise require hours of manual effort.
 
 After digging around, I found I wasn't alone — a lot of people online felt the same way. I also came across paid tools like [unlikeall.com](https://www.unlikeall.com/) that charge a fee to do exactly this. So I built my own version instead, and decided to make it free, open-source, and transparent about how it works — no hidden fees, no account credentials sent to a third-party server, and no black-box logic.
 
